@@ -1,0 +1,30 @@
+
+
+{{#each model as |trending|}}
+ <div class="layout-column flex-xs flex-gt-xs-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}<h2>{{trending.title}}</h2>{{/text.headline}}
+          {{#text.subhead}}<p>Overview : {{trending.overview}}</p>{{/text.subhead}}
+          {{#text.subhead}}<p>Release on : {{trending.release_date}}</p>{{/text.subhead}}
+        {{/title.text}}
+        <img src="https://image.tmdb.org/t/p/w500/{{trending.poster_path}}" style="padding-left:10px; width:190px; height:inherit" alt="Tomster" title="Tomster" />
+      {{/card.title}}
+      {{#card.actions}}
+
+        {{#paper-button}}Add to Favourites{{/paper-button}}
+        {{!-- {{#paper-button}}Action 2{{/paper-button}} --}}
+      {{/card.actions}}
+    {{/paper-card}}
+</div>
+{{!-- <h2>{{trending.title}}</h2> --}}
+{{!-- <p>Overview : {{trending.overview}}</p>
+<p>{{trending.poster_path}}</p>
+<p>Release on : {{trending.release_date}}</p> --}}
+{{/each}}
+
+
+  
+
+{{outlet}}
