@@ -1,1 +1,17 @@
 @import 'ember-paper';
+
+.home_button{
+    padding-left: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    //padding: 10px;
+    margin: 30px;
+    background-color: gainsboro;    
+}
+h2{
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+  }

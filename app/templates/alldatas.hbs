@@ -1,29 +1,39 @@
+<h2 style="margin:35px">Trending</h2>
 
-
-{{#each model as |trending|}}
- <div class="layout-column flex-xs flex-gt-xs-50">
+<div class="container">
+{{#each model.trending as |trending|}}
+ 
     {{#paper-card as |card|}}
-      {{#card.title as |title|}}
-        {{#title.text as |text|}}
-          {{#text.headline}}<h2>{{trending.title}}</h2>{{/text.headline}}
-          {{#text.subhead}}<p>Overview : {{trending.overview}}</p>{{/text.subhead}}
-          {{#text.subhead}}<p>Release on : {{trending.release_date}}</p>{{/text.subhead}}
-        {{/title.text}}
-        <img src="https://image.tmdb.org/t/p/w500/{{trending.poster_path}}" style="padding-left:10px; width:190px; height:inherit" alt="Tomster" title="Tomster" />
-      {{/card.title}}
-      {{#card.actions}}
-
-        {{#paper-button}}Add to Favourites{{/paper-button}}
-        {{!-- {{#paper-button}}Action 2{{/paper-button}} --}}
-      {{/card.actions}}
+      
+      
+      <img {{action "transitionToDetails" trending}}src="https://image.tmdb.org/t/p/w500/{{trending.poster_path}}" style="                
+      width:20vw; height:50vh" alt="Subsribe to Netflix" title={{trending.title}} />
+      
+        {{#paper-button raised=true primary=true}}Add to Favourites{{/paper-button}}
+        
+      
     {{/paper-card}}
-</div>
-{{!-- <h2>{{trending.title}}</h2> --}}
-{{!-- <p>Overview : {{trending.overview}}</p>
-<p>{{trending.poster_path}}</p>
-<p>Release on : {{trending.release_date}}</p> --}}
+    
 {{/each}}
+</div>
 
+<h2 style="margin:35px">Upcoming</h2>
+<div class="container">
+{{#each model.upcoming as |upcoming|}}
+ 
+    {{#paper-card as |card|}}
+      
+      
+      <img {{action "transitionToDetails" upcoming}} src="https://image.tmdb.org/t/p/w500/{{upcoming.poster_path}}" style="                
+      width:20vw; height:50vh" alt="Subsribe to Netflix" title={{upcoming.title}} />
+      
+        {{#paper-button raised=true warn=true}}Add to Favourites{{/paper-button}}
+        
+      
+    {{/paper-card}}
+    
+{{/each}}
+</div>
 
   
 
